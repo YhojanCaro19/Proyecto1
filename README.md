@@ -48,3 +48,7 @@ curl -X DELETE http://localhost:3000/products/2 -i
 ## Evidencias
 
 Ver capturas en la carpeta `docs/evidencias/` (docker ps, respuestas de los 5 endpoints, logs del contenedor).
+
+## Arquitectura
+
+La API corre en un único contenedor Node.js/Express, expuesto en el puerto 3000. No depende de ninguna base de datos externa: los productos se guardan en un arreglo en memoria, por lo que los datos se reinician cada vez que el contenedor se recrea.
